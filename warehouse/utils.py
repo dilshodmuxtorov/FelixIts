@@ -1,5 +1,5 @@
 import json
-from .models import ProductMaterialModel,MaterialModel, WarehouseModel
+from .models import ProductMaterialModel,MaterialModel, WarehouseModel, ProductModel
 
 lastresult ={}
 allmaterials = []
@@ -85,3 +85,6 @@ def calculate_materials(product_name, quantity):
       
     lastresult.update(result)
     return result
+
+
+
