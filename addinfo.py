@@ -24,15 +24,15 @@ def add_data_from_json_file(json_file_path):
         product_id = product_material['product_id']
         material_id = product_material['material_id']
         quantity = product_material['quantity']
-        product_instance = ProductModel.objects.get(id=product_id)  # Retrieve ProductModel instance
-        material_instance = MaterialModel.objects.get(id=material_id)  # Retrieve MaterialModel instance
+        product_instance = ProductModel.objects.get(id=product_id) 
+        material_instance = MaterialModel.objects.get(id=material_id)
         ProductMaterialModel.objects.create(product_id=product_instance, material_id=material_instance, quantity=quantity)
 
     for warehouse in data['warehousemodel']['warehouse']:
         material_id = warehouse['material_id']
         remainder = warehouse['remainder']
         price = warehouse['price']
-        material_instance = MaterialModel.objects.get(id=material_id)  # Retrieve MaterialModel instance
+        material_instance = MaterialModel.objects.get(id=material_id)  
         WarehouseModel.objects.create(material_id=material_instance, remainder=remainder, price=price)
 
 if __name__=="__main__":
